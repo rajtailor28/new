@@ -1,0 +1,24 @@
+
+
+@media screen and (min-width:650px){
+    body{
+        background-color: #000;
+        color:#FFF;
+        font-family: "Comic Sans MS";
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+    }
+}
+
+.box {
+    background-color: blue;
+    color: white;
+    min-height: 100px;
+    text-align: center;
+}
+    
+.box2 {
+    background-color: red;
+    color: white;
+    min-height: 100px;
+    text-align: center;
+}
