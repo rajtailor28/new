@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Query Selector All Example</title>
+        <style>
+            .red {
+                color: red;
+            }
+            .blue {
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <button>Button 1</button>
+        <button>Button 2</button>
+        <button>Button 3</button>
+
+        <div id="results"></div>
+
+        <form action="">
+            <input type="text" id="myTextField">
+            <select name="options" id="myOptions">
+                <option value="">Please select a color</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+        </form>
+
+        <script>
+            let buttons = document.querySelectorAll('button');
+            console.log(buttons);
+
+            let resultsDiv = document.querySelector('#results');
+            console.log(resultsDiv);
+
+            buttons.forEach(element => {
+                element.addEventListener('click', () => {
+                    resultsDiv.innerHTML = `${element.innerHTML} was clicked!`;
+                });
+
+                element.addEventListener('mouseover', () => {
+                    element.classList.toggle('red');
+                });
+
+                element.addEventListener('mouseout', () => {
+                    element.classList.toggle('red');
+                });
+
+            })
+
+            let textField = document.querySelector('form #myTextField');
+            console.log(textField);
+
+            let selectOptions = document.querySelector('#myOptions');
+            console.log(selectOptions);
+
+            textField.addEventListener('input', () => {
+                console.log('Changed!');
+                console.log(textField.value);
+
+                if (textField.value === 'password123') {
+                    alert('Congratz!');
+                }
+
+            })
+
+            selectOptions.addEventListener('change', () => {
+                console.log(selectOptions.value);
+
+                if (selectOptions.value === 'red') {
+                    alert('Red selected!');
+                }
+            })
+
+
+
+        </script>
+
+    </body>
+</html>
